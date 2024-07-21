@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="powrót"
+        tools:layout_editor_absoluteX="168dp"
+        tools:layout_editor_absoluteY="667dp" />
+
+    <Button
+        android:id="@+id/button50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ponury"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="536dp"
+        />
+
+    <Button
+        android:id="@+id/button51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="skwaszony"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="593dp" />
+
+    <Button
+        android:id="@+id/button53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="przygnębiony"
+        tools:layout_editor_absoluteX="241dp"
+        tools:layout_editor_absoluteY="37dp" />
+
+    <Button
+        android:id="@+id/button54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nieszczęśliwy"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="37dp" />
+
+    <Button
+        android:id="@+id/button56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zdegustowny"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="107dp" />
+
+    <Button
+        android:id="@+id/button57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zazdrosny"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <Button
+        android:id="@+id/button78"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zdenerwowany"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <Button
+        android:id="@+id/button72"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zniepokojony"
+        tools:layout_editor_absoluteX="241dp"
+        tools:layout_editor_absoluteY="107dp" />
+
+    <Button
+        android:id="@+id/button55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zmieszny"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="276dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <Button
+        android:id="@+id/button49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="przybity"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="276dp"
+        tools:layout_editor_absoluteY="605dp" />
+
+    <Button
+        android:id="@+id/button52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="smutny"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="605dp" />
+
+    <Button
+        android:id="@+id/button76"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="roztrzęsiony"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="260dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <Button
+        android:id="@+id/button77"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wściekły"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <Button
+        android:id="@+id/button79"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zaalarmowany"
+        tools:layout_editor_absoluteX="220dp"
+        tools:layout_editor_absoluteY="443dp" />
+
+    <Button
+        android:id="@+id/button80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="przestrszaony"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+    <Button
+        android:id="@+id/button81"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rozzłoszczony"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <Button
+        android:id="@+id/button82"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="przekorny"
+        tools:layout_editor_absoluteX="210dp"
+        tools:layout_editor_absoluteY="536dp" />
+
+    <Button
+        android:id="@+id/button83"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zestresowany"
+        tools:layout_editor_absoluteX="235dp"
+        tools:layout_editor_absoluteY="377dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
