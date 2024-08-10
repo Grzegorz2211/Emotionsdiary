@@ -17,14 +17,14 @@
         tools:ignore="MissingConstraints" />
         -->
     <EditText
-        android:id="@+id/titleEditText"
+        android:id="@+id/input_emotionsEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="tyuł"
+        android:hint="tytuł"
         android:textColor="@color/black"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="29dp"
-        tools:ignore="MissingConstraints" />
+        android:inputType="text"
+        android:enabled="true"
+        />
 
     <EditText
         android:id="@+id/contentEditText"
@@ -33,31 +33,37 @@
         android:hint="wpis"
         android:inputType="textMultiLine"
         android:minLines="5"
-        android:textSize="24sp"
+        android:textSize="28sp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="74dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="74dp" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="269dp"
         android:text="zapisz"
         android:textColor="@color/black"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="341dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="241dp" />
 
     <Button
         android:id="@+id/viewEntriesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="200dp"
         android:text="Wyświetl wpisy"
         android:textColor="@color/black"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="434dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-49dp"
+        tools:layout_editor_absoluteY="34dp" />
 
 </RelativeLayout>

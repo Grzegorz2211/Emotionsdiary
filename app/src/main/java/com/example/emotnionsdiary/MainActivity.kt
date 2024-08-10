@@ -13,6 +13,7 @@ import com.google.android.material.navigation.NavigationView
 
 
 
+
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout
@@ -28,26 +29,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, HomeFragment()).commit()
-            navigationView.setCheckedItem(R.id.nav_home)
+
+
         }
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_home -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, HomeFragment()).commit()
+
             R.id.nav_settings -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, SettingsFragment()).commit()
             R.id.nav_share -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, ShareFragment()).commit()
-            R.id.nav_about -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, AboutFragment()).commit()
             R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
             R.id.nav_login -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, LoginFragment()).commit()
             R.id.nav_diary -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, DiaryEmotionsFragment()).commit()
+            R.id.nav_EmotionsButons -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, EmotionsButonsFragment()).commit()
+
+
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
