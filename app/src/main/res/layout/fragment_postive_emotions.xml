@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostiveEmotionsFragment">
+    android:background="@drawable/backgroundmenu5">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/btnRozbawiony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rozbawiony" />
+
+        <Button
+            android:id="@+id/btnDumny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dumny" />
+
+        <Button
+            android:id="@+id/btnCzuły"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Czuły" />
+
+        <Button
+            android:id="@+id/btnSzczęśliwy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Szczęśliwy" />
+
+        <Button
+            android:id="@+id/btnZachwycony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zachwycony" />
+
+        <Button
+            android:id="@+id/btnUradowany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uradowany" />
+
+        <Button
+            android:id="@+id/btnRadosny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Radosny" />
+
+        <Button
+            android:id="@+id/btnSerdeczny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Serdeczny" />
+
+        <Button
+            android:id="@+id/btnZadowolony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zadowolony" />
+
+        <Button
+            android:id="@+id/btnNostalgiczny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nostalgiczny" />
+
+        <Button
+            android:id="@+id/btnSkromny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skromny" />
+
+        <Button
+            android:id="@+id/btnPogodny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pogodny" />
+
+        <Button
+            android:id="@+id/btnRozluźniony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rozluźniony" />
+
+        <Button
+            android:id="@+id/btnWypoczęty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wypoczęty" />
+
+        <Button
+            android:id="@+id/btnSpokojny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spokojny" />
+
+        <Button
+            android:id="@+id/btnOdprężony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Odprężony" />
+
+    </LinearLayout>
+</ScrollView>

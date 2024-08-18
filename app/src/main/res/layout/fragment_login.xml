@@ -42,7 +42,7 @@
                 android:background="@drawable/custom_edittext"
                 android:layout_marginTop="40dp"
                 android:padding="8dp"
-                android:hint="Username"
+                android:hint="nazwa użytkownika"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
@@ -55,7 +55,7 @@
                 android:layout_marginTop="20dp"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:hint="Password"
+                android:hint="hasło"
                 android:drawableLeft="@drawable/ic_baseline_lock_24"
                 android:textColor="@color/black"
                 android:drawablePadding="8dp"/>
@@ -63,7 +63,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Login"
+                android:text="Zaloguj"
                 android:id="@+id/loginButton"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"

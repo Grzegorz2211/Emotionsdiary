@@ -1,14 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HighActivationFragment">
+    android:background="@drawable/backgroundmenu2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+
+
+    <Button
+        android:id="@+id/btnZdumiony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zdumiony" />
+
+    <Button
+        android:id="@+id/btnPobudzony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pobudzony" />
+
+    <Button
+        android:id="@+id/btnZdziwiony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zdziwiony" />
+
+    <Button
+        android:id="@+id/btnAktywny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aktywny" />
+
+    <Button
+        android:id="@+id/btnSkupiony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skupiony" />
+
+    <Button
+        android:id="@+id/btnPodekscytowany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Podekscytowany" />
+
+    <Button
+        android:id="@+id/btnChętny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chętny" />
+
+    <Button
+        android:id="@+id/btnEntuzjastyczny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entuzjastyczny" />
+
+    <Button
+        android:id="@+id/btnUradowany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Uradowany" />
+
+    <Button
+        android:id="@+id/btnEuforyczny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Euforyczny" />
+
+    <Button
+        android:id="@+id/btnOżywiony"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ożywiony" />
+
+    <Button
+        android:id="@+id/btnPełenWerwy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pełen werwy" />
+
+</LinearLayout>

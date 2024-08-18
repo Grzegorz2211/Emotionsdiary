@@ -1,14 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LowActivityFragment">
+    android:background="@drawable/backgrand_brown">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:padding="16dp"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <Button
+            android:id="@+id/btnZazdrosny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Zazdrosny" />
+
+        <Button
+            android:id="@+id/btnZgorzknialy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Zgorzkniały" />
+
+        <Button
+            android:id="@+id/btnZmieszany"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Zmieszany" />
+
+        <Button
+            android:id="@+id/btnNieszczesliwy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Nieszczęśliwy" />
+
+        <Button
+            android:id="@+id/btnZniechecony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Zniechęcony" />
+
+        <Button
+            android:id="@+id/btnSmutny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Smutny" />
+
+        <Button
+            android:id="@+id/btnWzruszony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Wzruszony" />
+
+        <Button
+            android:id="@+id/btnPonury"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Ponury" />
+
+        <Button
+            android:id="@+id/btnPrzybity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Przybity" />
+
+        <Button
+            android:id="@+id/btnZawstydzony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Zawstydzony" />
+
+        <Button
+            android:id="@+id/btnZgnebiony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Zgnębiony" />
+
+        <Button
+            android:id="@+id/btnRozczarowany"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Rozczarowany" />
+
+        <Button
+            android:id="@+id/btnOtepialy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Otępiały" />
+
+        <Button
+            android:id="@+id/btnZmeczony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Zmęczony" />
+
+        <Button
+            android:id="@+id/btnOspaly"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Ospały" />
+
+        <Button
+            android:id="@+id/btnOciezaly"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Ociężały" />
+
+        <Button
+            android:id="@+id/btnZnudzony1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Znudzony" />
+
+        <Button
+            android:id="@+id/btnStrapiony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Strapiony" />
+
+        <Button
+            android:id="@+id/btnOszolomiony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Oszołomiony" />
+
+        <Button
+            android:id="@+id/btnZnudzony2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Znudzony" />
+
+        <Button
+            android:id="@+id/btnApatyczny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Apatyczny" />
+
+        <Button
+            android:id="@+id/btnWyciszony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Wyciszony" />
+
+        <Button
+            android:id="@+id/btnSpokojny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Spokojny" />
+
+        <Button
+            android:id="@+id/btnCichy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Cichy" />
+
+        <Button
+            android:id="@+id/btnNieaktywny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Nieaktywny" />
+
+        <Button
+            android:id="@+id/btnRozleniwiony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Rozleniwiony" />
+
+        <Button
+            android:id="@+id/btnBierny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Bierny" />
+
+        <Button
+            android:id="@+id/btnNiesmialy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Nieśmiały" />
+
+        <Button
+            android:id="@+id/btnPowazny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Poważny" />
+
+        <Button
+            android:id="@+id/btnSenny"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Senny" />
+
+    </GridLayout>
+</ScrollView>
+
+
+

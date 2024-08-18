@@ -1,15 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NegativeEmotionsFragment">
+    android:background="@drawable/backgroundmenu4">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</RelativeLayout>
+
+
+        <Button
+            android:id="@+id/Przekorny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Przekorny" />
+
+        <Button
+            android:id="@+id/btnZaalarmowany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zaalarmowany" />
+
+        <Button
+            android:id="@+id/btnWściekły"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wściekły" />
+
+        <Button
+            android:id="@+id/btnZestresowany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zestresowany" />
+
+        <Button
+            android:id="@+id/btnRozzłoszczony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rozzłoszczony" />
+
+        <Button
+            android:id="@+id/btnPrzestraszony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Przestraszony" />
+
+        <Button
+            android:id="@+id/btnZdenerwowany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zdenerwowany" />
+
+        <Button
+            android:id="@+id/btnRoztrzęsiony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Roztrzęsiony" />
+
+        <Button
+            android:id="@+id/btnZaniepokojony"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zaniepokojony" />
+
+    </LinearLayout>
+</ScrollView>

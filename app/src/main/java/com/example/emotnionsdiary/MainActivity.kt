@@ -36,17 +36,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
 
-            R.id.nav_settings -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SettingsFragment()).commit()
-            R.id.nav_share -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, ShareFragment()).commit()
             R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
             R.id.nav_login -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, LoginFragment()).commit()
             R.id.nav_diary -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, DiaryEmotionsFragment()).commit()
             R.id.nav_EmotionsButons -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, EmotionsButonsFragment()).commit()
+                .replace(R.id.fragment_container,EmotionsCircle ()).commit()
 
 
         }
