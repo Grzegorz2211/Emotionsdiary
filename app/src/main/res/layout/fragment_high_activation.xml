@@ -82,6 +82,12 @@
         android:id="@+id/btnPełenWerwy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pełen werwy" />
+        android:text="Pełen werwy"/>
+
+    <Button
+        android:id="@+id/PowrótHA"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:text="Powrót" />
 
 </LinearLayout>

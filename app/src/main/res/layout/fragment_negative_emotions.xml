@@ -15,7 +15,7 @@
 
 
         <Button
-            android:id="@+id/Przekorny"
+            android:id="@+id/btnPrzekorny"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Przekorny" />
@@ -67,6 +67,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Zaniepokojony" />
+        <Button
+        android:id="@+id/btnPowrótNE"
+        android:layout_width="301dp"
+        android:layout_height="wrap_content"
+        android:text="Powrót" />
 
     </LinearLayout>
 </ScrollView>

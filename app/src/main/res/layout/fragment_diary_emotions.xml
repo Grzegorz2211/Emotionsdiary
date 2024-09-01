@@ -45,6 +45,18 @@
         tools:layout_editor_absoluteX="35dp"
         tools:layout_editor_absoluteY="241dp"/>
 
+    <Button
+        android:id="@+id/diaryNextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="169dp"
+        android:text="Dalej"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="241dp" />
 
 
 </RelativeLayout>

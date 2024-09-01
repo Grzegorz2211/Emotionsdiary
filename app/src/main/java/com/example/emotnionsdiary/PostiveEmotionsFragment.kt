@@ -38,19 +38,30 @@ class PostiveEmotionsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_postive_emotions, container, false)
-    }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val rozbawiony: Button = view.findViewById(R.id.btnRozbawiony)
+        val view = inflater.inflate(R.layout.fragment_postive_emotions, container, false)
+        val emotionsButonsFragment: Button = view.findViewById(R.id.btnPowrótPE)
+        // Set up the click handler
+        emotionsButonsFragment.setOnClickListener {
+            // Handle button click
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, EmotionsButonsFragment()).commit()
+        }
+        // Tablica z identyfikatorami przycisków
+        val buttonIds = arrayOf(R.id.btnRozbawiony, R.id.btnDumny, R.id.btnCzuły, R.id.btnSzczęśliwy,R.id.btnZachwycony,R.id.btnUradowany,R.id.btnRadosny,R.id.btnSerdeczny,R.id.btnZadowolony,R.id.btnNostalgiczny,R.id.btnSkromny,R.id.btnPogodny,R.id.btnRozluźniony,R.id.btnWypoczęty,R.id.btnSpokojny,R.id.btnOdprężony)
 
-        rozbawiony.setOnClickListener(object: OnClickListener {
-            override fun onClick(v: View?) {
 
+        for (id in buttonIds) {
+            view.findViewById<Button>(id).setOnClickListener { button ->
+                // Pobierz tekst z przycisku
+                val buttonText = (button as Button).text
+                // Wyświetl Toast z nazwą przycisku
+                Toast.makeText(activity, "Kliknięty przycisk: $buttonText", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
+
+        return view
     }
+
 
     companion object {
         /**

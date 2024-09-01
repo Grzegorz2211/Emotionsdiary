@@ -107,5 +107,11 @@
             android:layout_height="wrap_content"
             android:text="Odprężony" />
 
+        <Button
+            android:id="@+id/btnPowrótPE"
+            android:layout_width="301dp"
+            android:layout_height="wrap_content"
+            android:text="Powrót" />
+
     </LinearLayout>
 </ScrollView>

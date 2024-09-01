@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +35,28 @@ class LowActivityFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_low_activity, container, false)
+        val view = inflater.inflate(R.layout.fragment_low_activity, container, false)
+        val emotionsButonsFragment: Button = view.findViewById(R.id.btnPowrotLA)
+        // Set up the click handler
+        emotionsButonsFragment.setOnClickListener {
+            // Handle button click
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, EmotionsButonsFragment()).commit()
+        }
+        // Tablica z identyfikatorami przycisków
+        val buttonIds = arrayOf(R.id.btnZazdrosny,R.id.btnZgorzknialy,R.id.btnZmieszany,R.id.btnNieszczesliwy,R.id.btnZniechecony,R.id.btnSmutny,R.id.btnWzruszony,R.id.btnPonury,R.id.btnPrzybity,R.id.btnZawstydzony,R.id.btnZgnebiony,R.id.btnRozczarowany,R.id.btnOtepialy,R.id.btnZmeczony,R.id.btnOspaly,R.id.btnOciezaly,R.id.btnZnudzony1,R.id.btnApatyczny,R.id.btnWyciszony,R.id.btnSpokojny,R.id.btnCichy,R.id.btnNieaktywny,R.id.btnRozleniwiony,R.id.btnBierny,R.id.btnNiesmialy,R.id.btnPowazny,R.id.btnSenny)
+
+
+        for (id in buttonIds) {
+            view.findViewById<Button>(id).setOnClickListener { button ->
+                // Pobierz tekst z przycisku
+                val buttonText = (button as Button).text
+                // Wyświetl Toast z nazwą przycisku
+                Toast.makeText(activity, "Kliknięty przycisk: $buttonText", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        return view
     }
 
     companion object {

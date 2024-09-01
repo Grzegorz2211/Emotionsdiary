@@ -42,23 +42,20 @@ class DiaryEmotionsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_diary_emotions, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val saveButton: Button = view.findViewById(R.id.saveButton)
-       /*
-        saveButton.setOnClickListener {
-            val userInput = emotionsEditText.text
-            Log.d("UserInput", "Input: '$userInput'")
-            Toast.makeText(activity, "You entered: $userInput", Toast.LENGTH_LONG).show()
 
-            if (userInput.isEmpty()) {
-                Toast.makeText(activity, "Please enter some text", Toast.LENGTH_LONG).show()
-            } else {
-                // Proceed with handling the input
-                Toast.makeText(activity, "You entered: $userInput", Toast.LENGTH_LONG).show()
-            }
+        val emotionsCircle: Button = view.findViewById(R.id.diaryNextButton)
+        // Set up the click handler
+        emotionsCircle.setOnClickListener {
+            // Handle button click
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, EmotionsCircle()).commit()
         }
-        */
+
+
 
         saveButton.setOnClickListener(object: OnClickListener {
             override fun onClick(v: View?) {

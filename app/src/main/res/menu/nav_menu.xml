@@ -8,12 +8,17 @@
 
         <item
             android:id="@+id/nav_diary"
-            android:icon="@drawable/diary100"
-            android:title="Dziennik"/>
-        <item
-            android:id="@+id/nav_EmotionsButons"
             android:icon="@drawable/icons8emotions100"
-            android:title="Koło Emocji"/>
+            android:title="Dziennik emocji"/>
+        <item
+            android:id="@+id/nav_view_diary"
+            android:icon="@drawable/diary100"
+            android:title="Mój dziennik"/>
+
+        <item
+            android:id="@+id/nav_SettingsFragments"
+            android:icon="@drawable/icons8settings100"
+            android:title="Ustwienia"/>
 
 
 

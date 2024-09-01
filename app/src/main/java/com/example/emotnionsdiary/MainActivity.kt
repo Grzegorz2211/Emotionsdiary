@@ -41,8 +41,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.fragment_container, LoginFragment()).commit()
             R.id.nav_diary -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, DiaryEmotionsFragment()).commit()
-            R.id.nav_EmotionsButons -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container,EmotionsCircle ()).commit()
+            R.id.nav_SettingsFragments -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,SettingsFragment ()).commit()
+            R.id.nav_view_diary -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,ViewOfTheDiary ()).commit()
+
 
 
         }
