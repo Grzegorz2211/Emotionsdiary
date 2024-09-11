@@ -17,6 +17,7 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -44,7 +45,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_SettingsFragments -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container,SettingsFragment ()).commit()
             R.id.nav_view_diary -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container,ViewOfTheDiary ()).commit()
+                .replace(R.id.fragment_container,DiaryViewAll ()).commit()
+
 
 
 

@@ -7,14 +7,17 @@
     tools:context=".EmotionsCircle">
 
     <!-- TODO: Update blank fragment layout -->
+
     <Button
-        android:id="@+id/nav_EmotionsButons"
+        android:id="@+id/nav_nextbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="157dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="47dp"
         android:text="Dalej" />
+
+
 
 </RelativeLayout>

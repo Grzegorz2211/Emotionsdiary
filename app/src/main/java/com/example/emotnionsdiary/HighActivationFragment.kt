@@ -7,11 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import  android.widget.Toast
+import android.util.Log
+import android.view.View.OnClickListener
+import android.widget.EditText
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
 
 /**
  * A simple [Fragment] subclass.
@@ -22,6 +26,7 @@ class HighActivationFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var backendService: EmotionsDiaryService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +34,7 @@ class HighActivationFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        backendService = EmotionsDiaryService()
     }
 
     override fun onCreateView(
@@ -51,10 +57,10 @@ class HighActivationFragment : Fragment() {
                 // Pobierz tekst z przycisku
                 val buttonText = (button as Button).text
                 // Wyświetl Toast z nazwą przycisku
-                Toast.makeText(activity, "Kliknięty przycisk: $buttonText", Toast.LENGTH_SHORT).show()
+                val resp = backendService.saveEmotion(buttonText.toString())
+                Toast.makeText(requireActivity(), "You entereds: $resp", Toast.LENGTH_LONG).show()
             }
         }
-
         return view
     }
 

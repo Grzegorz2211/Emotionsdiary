@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
+    android:background="@drawable/backgroundmenu"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     tools:context=".MainActivity">
@@ -34,6 +35,6 @@
         android:layout_gravity="start"
         app:menu="@menu/nav_menu"
         android:background="@drawable/backgroundmenu"
-        app:itemIconTint="@color/lavender"
+        app:itemIconTint="@color/black"
         app:itemTextColor="@color/lavender"/>
 </androidx.drawerlayout.widget.DrawerLayout>

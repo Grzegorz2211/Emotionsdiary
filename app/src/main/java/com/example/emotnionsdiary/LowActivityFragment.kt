@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import android.util.Log
+import android.view.View.OnClickListener
+import android.widget.EditText
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +25,7 @@ class LowActivityFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var backendService: EmotionsDiaryService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +33,7 @@ class LowActivityFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        backendService = EmotionsDiaryService()
     }
 
     override fun onCreateView(
@@ -43,20 +48,22 @@ class LowActivityFragment : Fragment() {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, EmotionsButonsFragment()).commit()
         }
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         // Tablica z identyfikatorami przycisków
         val buttonIds = arrayOf(R.id.btnZazdrosny,R.id.btnZgorzknialy,R.id.btnZmieszany,R.id.btnNieszczesliwy,R.id.btnZniechecony,R.id.btnSmutny,R.id.btnWzruszony,R.id.btnPonury,R.id.btnPrzybity,R.id.btnZawstydzony,R.id.btnZgnebiony,R.id.btnRozczarowany,R.id.btnOtepialy,R.id.btnZmeczony,R.id.btnOspaly,R.id.btnOciezaly,R.id.btnZnudzony1,R.id.btnApatyczny,R.id.btnWyciszony,R.id.btnSpokojny,R.id.btnCichy,R.id.btnNieaktywny,R.id.btnRozleniwiony,R.id.btnBierny,R.id.btnNiesmialy,R.id.btnPowazny,R.id.btnSenny)
-
 
         for (id in buttonIds) {
             view.findViewById<Button>(id).setOnClickListener { button ->
                 // Pobierz tekst z przycisku
                 val buttonText = (button as Button).text
-                // Wyświetl Toast z nazwą przycisku
-                Toast.makeText(activity, "Kliknięty przycisk: $buttonText", Toast.LENGTH_SHORT).show()
+                val resp = backendService.saveEmotion(buttonText.toString())
+                Toast.makeText(requireActivity(), "You entereds: $resp", Toast.LENGTH_LONG).show()
             }
         }
 
-        return view
     }
 
     companion object {

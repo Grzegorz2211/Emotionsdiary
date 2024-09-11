@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "588889926638",
+    "project_id": "emotionsdiary-2282b",
+    "storage_bucket": "emotionsdiary-2282b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588889926638:android:c3d5dd7355ab99b1d93cff",
+        "android_client_info": {
+          "package_name": "com.example.emotnionsdiary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-jNaivY0fELUUDGPOeThRWlgQ7sp2Ef0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
