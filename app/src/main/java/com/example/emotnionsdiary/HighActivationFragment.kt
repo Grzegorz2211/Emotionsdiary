@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import  android.widget.Toast
-import android.util.Log
-import android.view.View.OnClickListener
-import android.widget.EditText
+import com.example.emotionsdiary.ARG_CONTENT
+import com.example.emotionsdiary.ARG_TITLE
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,17 +23,18 @@ private const val ARG_PARAM2 = "param2"
  */
 class HighActivationFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private lateinit var backendService: EmotionsDiaryService
+    private var title: String? = null
+    private var content: String? = null
+
+    private lateinit var backendService: DiaryService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            title = it.getString(ARG_TITLE)
+            content = it.getString(ARG_CONTENT)
         }
-        backendService = EmotionsDiaryService()
+        backendService = DiaryService(requireContext())
     }
 
     override fun onCreateView(
@@ -47,7 +47,7 @@ class HighActivationFragment : Fragment() {
         emotionsButonsFragment.setOnClickListener {
             // Handle button click
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, EmotionsButonsFragment()).commit()
+                .replace(R.id.fragment_container, EmotionsButonsFragment.newInstance(title, content)).commit()
         }
         // Tablica z identyfikatorami przycisków
         val buttonIds = arrayOf(R.id.btnZdumiony,R.id.btnPobudzony,R.id.btnZdziwiony,R.id.btnAktywny,R.id.btnSkupiony,R.id.btnPodekscytowany,R.id.btnChętny,R.id.btnEntuzjastyczny,R.id.btnUradowany,R.id.btnEuforyczny,R.id.btnOżywiony,R.id.btnPełenWerwy)
@@ -57,7 +57,7 @@ class HighActivationFragment : Fragment() {
                 // Pobierz tekst z przycisku
                 val buttonText = (button as Button).text
                 // Wyświetl Toast z nazwą przycisku
-                val resp = backendService.saveEmotion(buttonText.toString())
+                val resp = backendService.saveDiary(title, content, buttonText.toString())
                 Toast.makeText(requireActivity(), "You entereds: $resp", Toast.LENGTH_LONG).show()
             }
         }
@@ -65,21 +65,12 @@ class HighActivationFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HighActivationFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HighActivationFragment().apply {
+        fun newInstance(title: String?, content: String?) =
+            PostiveEmotionsFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_TITLE, title)
+                    putString(ARG_CONTENT, content)
                 }
             }
     }

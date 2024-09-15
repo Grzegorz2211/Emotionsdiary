@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:background="@drawable/backgroundmenu3"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".DiaryEmotionsFragment">
+    tools:context=".DiaryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
+    <!-- Title Input -->
     <EditText
         android:id="@+id/input_emotionsEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="tytuł"
+        android:autofillHints=""
+        android:hint="@string/title"
         android:textColor="@color/black"
         android:inputType="text"
-        android:enabled="true"
-        />
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/edittext_background"/>
 
+    <!-- Content Input -->
     <EditText
         android:id="@+id/contentEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="wpis"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:autofillHints=""
+        android:hint="@string/content"
         android:inputType="textMultiLine"
         android:minLines="5"
-        android:textSize="28sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="74dp"
-        android:layout_marginTop="50dp"/>
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="top"/>
 
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="269dp"
-        android:text="zapisz"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="241dp"/>
+    <!-- Save Button -->
+<!--    <Button-->
+<!--        android:id="@+id/saveButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:text="@string/save"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="16sp"-->
+<!--        android:background="@drawable/button_background"-->
+<!--        android:layout_marginBottom="10dp"/>-->
 
+    <!-- Next Button -->
     <Button
         android:id="@+id/diaryNextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="169dp"
-        android:text="Dalej"
+        android:text="@string/next"
         android:textColor="@color/white"
         android:textSize="16sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="241dp" />
+        android:background="@drawable/button_background"/>
 
-
-</RelativeLayout>
+</LinearLayout>

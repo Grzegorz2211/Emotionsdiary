@@ -2,24 +2,33 @@ package com.example.emotnionsdiary
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.emotnionsdiary.database.Diary
+import com.example.emotnionsdiary.database.DiaryDatabaseHelper
 import com.google.android.material.navigation.NavigationView
-
-
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var db: DiaryDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        db = DiaryDatabaseHelper(this)
+        db.insertDiary(Diary(title="tytul", content = "KONENT", emotion = "EMOTION!"))
+        try {
+            val diaries = db.getAllDiaries()
+            println("DIARIES"+diaries)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
         setContentView(R.layout.activity_main)
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -41,15 +50,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_login -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, LoginFragment()).commit()
             R.id.nav_diary -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, DiaryEmotionsFragment()).commit()
+                .replace(R.id.fragment_container, DiaryFragment()).commit()
             R.id.nav_SettingsFragments -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container,SettingsFragment ()).commit()
             R.id.nav_view_diary -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container,DiaryViewAll ()).commit()
-
-
-
-
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true

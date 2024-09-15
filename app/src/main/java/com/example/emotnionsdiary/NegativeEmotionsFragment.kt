@@ -7,13 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
-import android.util.Log
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
+import com.example.emotionsdiary.ARG_CONTENT
+import com.example.emotionsdiary.ARG_TITLE
 
 /**
  * A simple [Fragment] subclass.
@@ -22,17 +17,17 @@ private const val ARG_PARAM2 = "param2"
  */
 class NegativeEmotionsFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private lateinit var backendService: EmotionsDiaryService
+    private var title: String? = null
+    private var content: String? = null
+    private lateinit var backendService: DiaryService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            title = it.getString(ARG_TITLE)
+            content = it.getString(ARG_CONTENT)
         }
-        backendService = EmotionsDiaryService()
+        backendService = DiaryService(requireContext())
     }
 
     override fun onCreateView(
@@ -47,7 +42,7 @@ class NegativeEmotionsFragment : Fragment() {
         emotionsButonsFragment.setOnClickListener {
             // Handle button click
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, EmotionsButonsFragment()).commit()
+                .replace(R.id.fragment_container, EmotionsButonsFragment.newInstance(title, content)).commit()
         }
 
         for (id in buttonIds) {
@@ -55,7 +50,7 @@ class NegativeEmotionsFragment : Fragment() {
                 // Pobierz tekst z przycisku
                 val buttonText = (button as Button).text
                 // Wyświetl Toast z nazwą przycisku
-                val resp = backendService.saveEmotion(buttonText.toString())
+                val resp = backendService.saveDiary(title, content, buttonText.toString())
                 Toast.makeText(requireActivity(), "You entereds: $resp", Toast.LENGTH_LONG).show()
             }
         }
@@ -64,21 +59,12 @@ class NegativeEmotionsFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment NegativeEmotionsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(title: String?, content: String?) =
             NegativeEmotionsFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_TITLE, title)
+                    putString(ARG_CONTENT, content)
                 }
             }
     }

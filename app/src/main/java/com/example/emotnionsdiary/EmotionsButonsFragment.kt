@@ -6,12 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import  android.widget.Toast
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+// Constants for arguments
+private const val ARG_TITLE = "title"
+private const val ARG_CONTENT = "content"
 
 /**
  * A simple [Fragment] subclass.
@@ -19,15 +17,15 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class EmotionsButonsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var title: String? = null
+    private var content: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            title = it.getString(ARG_TITLE)
+            content = it.getString(ARG_CONTENT)
         }
     }
 
@@ -39,57 +37,59 @@ class EmotionsButonsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_emotions_butons, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //Reference the button
+        println("TITLE: $title")
+        println("CONTENT: $content")
+
+        // Set the received data to TextViews or any other UI component if needed
+        // val titleTextView: TextView = view.findViewById(R.id.titleTextView)
+        // val contentTextView: TextView = view.findViewById(R.id.contentTextView)
+        // titleTextView.text = title
+        // contentTextView.text = content
+
         val positiveEmotionsButton: Button = view.findViewById(R.id.nav_PositiveEmotions)
-        // Set up the click handler
         positiveEmotionsButton.setOnClickListener {
-            // Handle button click
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, PostiveEmotionsFragment()).commit()
+                .replace(R.id.fragment_container, PostiveEmotionsFragment.newInstance(title, content))
+                .addToBackStack(null)
+                .commit()
         }
 
         val highActivationFragment: Button = view.findViewById(R.id.nav_HighActivation)
         highActivationFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, HighActivationFragment()).commit()
+                .replace(R.id.fragment_container, HighActivationFragment.newInstance(title, content))
+                .addToBackStack(null)
+                .commit()
         }
-        val lowActivityFragmentowActivityFragment: Button = view.findViewById(R.id.nav_LowActivity)
-        lowActivityFragmentowActivityFragment.setOnClickListener {
+
+        val lowActivityFragment: Button = view.findViewById(R.id.nav_LowActivity)
+        lowActivityFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, LowActivityFragment()).commit()
+                .replace(R.id.fragment_container, LowActivityFragment.newInstance(title, content))
+                .addToBackStack(null)
+                .commit()
         }
-        val NegativeEmotionsFragment: Button = view.findViewById(R.id.nav_NegativeEmotions)
-        NegativeEmotionsFragment.setOnClickListener {
+
+        val negativeEmotionsFragment: Button = view.findViewById(R.id.nav_NegativeEmotions)
+        negativeEmotionsFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, NegativeEmotionsFragment()).commit()
+                .replace(R.id.fragment_container, NegativeEmotionsFragment.newInstance(title, content))
+                .addToBackStack(null)
+                .commit()
         }
-
-
-
     }
 
-
-
-        companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment EmotionsButonsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
+    companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(title: String?, content: String?) =
             EmotionsButonsFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_TITLE, title)
+                    putString(ARG_CONTENT, content)
                 }
             }
+
     }
 }
