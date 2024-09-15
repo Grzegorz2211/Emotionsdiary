@@ -4,7 +4,7 @@ import android.content.Context
 import com.example.emotnionsdiary.database.Diary
 import com.example.emotnionsdiary.database.DiaryDatabaseHelper
 
-class DiaryService(private val context: Context) {
+class DiaryService(context: Context) {
 
     private val dbHelper = DiaryDatabaseHelper(context)
 

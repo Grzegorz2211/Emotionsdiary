@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.emotnionsdiary.database.Diary
 
 class DiaryAdapter(private val diaries: List<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>() {
-
     inner class DiaryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.tvTitle)
         val content: TextView = itemView.findViewById(R.id.tvContent)

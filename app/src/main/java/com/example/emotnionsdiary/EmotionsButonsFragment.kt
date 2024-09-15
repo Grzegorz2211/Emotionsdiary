@@ -6,16 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.example.emotnionsdiary.Constant.ARG_CONTENT
+import com.example.emotnionsdiary.Constant.ARG_TITLE
 
-// Constants for arguments
-private const val ARG_TITLE = "title"
-private const val ARG_CONTENT = "content"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [EmotionsButonsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class EmotionsButonsFragment : Fragment() {
 
     private var title: String? = null
@@ -33,20 +26,11 @@ class EmotionsButonsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_emotions_butons, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        println("TITLE: $title")
-        println("CONTENT: $content")
-
-        // Set the received data to TextViews or any other UI component if needed
-        // val titleTextView: TextView = view.findViewById(R.id.titleTextView)
-        // val contentTextView: TextView = view.findViewById(R.id.contentTextView)
-        // titleTextView.text = title
-        // contentTextView.text = content
 
         val positiveEmotionsButton: Button = view.findViewById(R.id.nav_PositiveEmotions)
         positiveEmotionsButton.setOnClickListener {
