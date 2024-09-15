@@ -16,18 +16,9 @@ import com.google.android.material.navigation.NavigationView
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var db: DiaryDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        db = DiaryDatabaseHelper(this)
-        db.insertDiary(Diary(title="tytul", content = "KONENT", emotion = "EMOTION!"))
-        try {
-            val diaries = db.getAllDiaries()
-            println("DIARIES"+diaries)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
 
         setContentView(R.layout.activity_main)
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
