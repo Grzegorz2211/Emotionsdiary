@@ -1,5 +1,6 @@
 package com.example.emotnionsdiary
 
+import DiaryAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,13 +22,18 @@ class DiaryViewAll : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_diary_view_all, container, false)
 
+        // Initialize RecyclerView
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
+        // Initialize Database Helper
         diaryDatabaseHelper = DiaryDatabaseHelper(requireContext())
-        val diaries = diaryDatabaseHelper.getAllDiaries()
 
-        diaryAdapter = DiaryAdapter(diaries)
+        // Fetch diary entries from the database
+        val diaries = diaryDatabaseHelper.getAllDiaries()  // This should return a mutable list
+
+        // Initialize Adapter with the list and database helper
+        diaryAdapter = DiaryAdapter(diaries.toMutableList(), diaryDatabaseHelper)  // Ensure mutable list
         recyclerView.adapter = diaryAdapter
 
         return view

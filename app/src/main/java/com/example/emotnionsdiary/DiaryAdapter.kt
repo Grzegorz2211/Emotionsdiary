@@ -1,29 +1,43 @@
-package com.example.emotnionsdiary
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.emotnionsdiary.R
 import com.example.emotnionsdiary.database.Diary
+import com.example.emotnionsdiary.database.DiaryDatabaseHelper
 
-class DiaryAdapter(private val diaries: List<Diary>) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>() {
+class DiaryAdapter(
+    private var diaries: MutableList<Diary>,  // List of diary entries
+    private val diaryDatabaseHelper: DiaryDatabaseHelper  // For handling delete
+) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>() {
+
     inner class DiaryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.findViewById(R.id.tvTitle)
-        val content: TextView = itemView.findViewById(R.id.tvContent)
-        val emotion: TextView = itemView.findViewById(R.id.tvEmotion)
+        val diaryEntry: TextView = itemView.findViewById(R.id.tvDiaryEntry)
+        val btnDelete: Button = itemView.findViewById(R.id.btnDelete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiaryViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_diary, parent, false)
+        // Inflate the diary_item.xml layout for each item
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.diary_item, parent, false)
         return DiaryViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: DiaryViewHolder, position: Int) {
         val diary = diaries[position]
-        holder.title.text = diary.title
-        holder.content.text = diary.content
-        holder.emotion.text = diary.emotion
+        holder.diaryEntry.text = diary.content  // Assuming 'content' is the diary entry
+
+        // Set up the delete button click listener
+        holder.btnDelete.setOnClickListener {
+            // Remove the diary entry from the database
+            diaryDatabaseHelper.deleteDiary(diary.id)
+
+            // Remove the diary entry from the list and notify the adapter
+            diaries.removeAt(position)
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, diaries.size)
+        }
     }
 
     override fun getItemCount(): Int = diaries.size

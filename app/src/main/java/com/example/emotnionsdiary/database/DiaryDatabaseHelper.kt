@@ -69,4 +69,12 @@ class DiaryDatabaseHelper(context: Context): SQLiteOpenHelper(context, DB_NAME, 
         return diaries
     }
 
+    fun deleteDiary(id: Int) {
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(id.toString())
+
+        db.delete(TABLE_NAME, whereClause, whereArgs)
+        db.close()
+    }
 }

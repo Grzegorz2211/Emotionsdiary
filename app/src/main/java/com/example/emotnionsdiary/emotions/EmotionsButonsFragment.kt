@@ -1,4 +1,4 @@
-package com.example.emotnionsdiary
+package com.example.emotnionsdiary.emotions
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
+import com.example.emotnionsdiary.R
 
 class EmotionsButonsFragment : Fragment() {
 

@@ -1,14 +1,15 @@
-package com.example.emotnionsdiary
+package com.example.emotnionsdiary.emotions
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
+import com.example.emotnionsdiary.services.DiaryService
+import com.example.emotnionsdiary.R
 
 class PostiveEmotionsFragment : Fragment() {
     private var title: String? = null
@@ -32,15 +33,34 @@ class PostiveEmotionsFragment : Fragment() {
         val emotionsButonsFragment: Button = view.findViewById(R.id.btnPowrótPE)
         emotionsButonsFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, EmotionsButonsFragment.newInstance(title, content)).commit()
+                .replace(
+                    R.id.fragment_container,
+                    EmotionsButonsFragment.newInstance(title, content)
+                ).commit()
         }
-        val buttonIds = arrayOf(R.id.btnRozbawiony, R.id.btnDumny, R.id.btnCzuły, R.id.btnSzczęśliwy,R.id.btnZachwycony,R.id.btnUradowany,R.id.btnRadosny,R.id.btnSerdeczny,R.id.btnZadowolony,R.id.btnNostalgiczny,R.id.btnSkromny,R.id.btnPogodny,R.id.btnRozluźniony,R.id.btnWypoczęty,R.id.btnSpokojny,R.id.btnOdprężony)
+        val buttonIds = arrayOf(
+            R.id.btnRozbawiony,
+            R.id.btnDumny,
+            R.id.btnCzuły,
+            R.id.btnSzczęśliwy,
+            R.id.btnZachwycony,
+            R.id.btnUradowany,
+            R.id.btnRadosny,
+            R.id.btnSerdeczny,
+            R.id.btnZadowolony,
+            R.id.btnNostalgiczny,
+            R.id.btnSkromny,
+            R.id.btnPogodny,
+            R.id.btnRozluźniony,
+            R.id.btnWypoczęty,
+            R.id.btnSpokojny,
+            R.id.btnOdprężony
+        )
 
         for (id in buttonIds) {
             view.findViewById<Button>(id).setOnClickListener { button ->
                 val buttonText = (button as Button).text
-                val resp = backendService.saveDiary(title, content, buttonText.toString())
-                Toast.makeText(requireActivity(), "You entereds: $resp", Toast.LENGTH_LONG).show()
+                backendService.saveDiary(title, content, buttonText.toString())
             }
         }
 

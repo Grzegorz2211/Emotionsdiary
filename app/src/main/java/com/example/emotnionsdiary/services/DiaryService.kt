@@ -1,4 +1,4 @@
-package com.example.emotnionsdiary
+package com.example.emotnionsdiary.services
 
 import android.content.Context
 import com.example.emotnionsdiary.database.Diary

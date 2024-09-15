@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-        drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+        drawerLayout = findViewById(R.id.drawer_layout)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
@@ -26,10 +26,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-        if (savedInstanceState == null) {
-
-
-        }
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -47,11 +43,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
-//    override fun onBackPressed() {
-//        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-//            drawerLayout.closeDrawer(GravityCompat.START)
-//        } else {
-//            onBackPressedDispatcher.onBackPressed()
-//        }
-//    }
 }

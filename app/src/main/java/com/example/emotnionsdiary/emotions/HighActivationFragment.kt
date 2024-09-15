@@ -1,14 +1,17 @@
-package com.example.emotnionsdiary
+package com.example.emotnionsdiary.emotions
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
+import com.example.emotnionsdiary.services.DiaryService
+import com.example.emotnionsdiary.DiaryViewAll
+import com.example.emotnionsdiary.R
 
 class HighActivationFragment : Fragment() {
     private var title: String? = null
@@ -30,20 +33,38 @@ class HighActivationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_high_activation, container, false)
-        val emotionsButonsFragment: Button = view.findViewById(R.id.PowrótHA)
+        val emotionsButtonFragment: Button = view.findViewById(R.id.PowrótHA)
 
-        emotionsButonsFragment.setOnClickListener {
+        emotionsButtonFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, EmotionsButonsFragment.newInstance(title, content)).commit()
+                .replace(
+                    R.id.fragment_container,
+                    EmotionsButonsFragment.newInstance(title, content)
+                ).commit()
         }
-        val buttonIds = arrayOf(R.id.btnZdumiony,R.id.btnPobudzony,R.id.btnZdziwiony,R.id.btnAktywny,R.id.btnSkupiony,R.id.btnPodekscytowany,R.id.btnChętny,R.id.btnEntuzjastyczny,R.id.btnUradowany,R.id.btnEuforyczny,R.id.btnOżywiony,R.id.btnPełenWerwy)
+        val buttonIds = arrayOf(
+            R.id.btnZdumiony,
+            R.id.btnPobudzony,
+            R.id.btnZdziwiony,
+            R.id.btnAktywny,
+            R.id.btnSkupiony,
+            R.id.btnPodekscytowany,
+            R.id.btnChętny,
+            R.id.btnEntuzjastyczny,
+            R.id.btnUradowany,
+            R.id.btnEuforyczny,
+            R.id.btnOżywiony,
+            R.id.btnPełenWerwy
+        )
 
         for (id in buttonIds) {
             view.findViewById<Button>(id).setOnClickListener { button ->
                 val buttonText = (button as Button).text
-                val resp = backendService.saveDiary(title, content, buttonText.toString())
 
-                Toast.makeText(requireActivity(), "You entereds: $resp", Toast.LENGTH_LONG).show()
+                backendService.saveDiary(title, content, buttonText.toString())
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, DiaryViewAll())
+                        .commit()
             }
         }
         return view
