@@ -8,12 +8,11 @@
     android:background="@drawable/backgroundmenu3"
     tools:context=".MainActivity">
 
-    <!-- Title for the diary page -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mój Dziennik"
+        android:text="My Diary"
         android:textSize="24sp"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
@@ -21,7 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- RecyclerView to display diary entries -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"

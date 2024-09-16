@@ -28,7 +28,6 @@ class DiaryFragment : Fragment() {
             val title = emotionsEditText.text.toString()
             val content = contentEditText.text.toString()
 
-
             val emotionsCircleFragment = EmotionsCircle.newInstance(title, content)
 
             parentFragmentManager.beginTransaction()

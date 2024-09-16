@@ -1,7 +1,6 @@
 package com.example.emotnionsdiary.emotions
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +13,9 @@ import com.example.emotnionsdiary.DiaryViewAll
 import com.example.emotnionsdiary.R
 
 class HighActivationFragment : Fragment() {
+
     private var title: String? = null
     private var content: String? = null
-
     private lateinit var backendService: DiaryService
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,15 +32,15 @@ class HighActivationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_high_activation, container, false)
-        val emotionsButtonFragment: Button = view.findViewById(R.id.PowrótHA)
 
+        val emotionsButtonFragment: Button = view.findViewById(R.id.PowrótHA)
         emotionsButtonFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(
-                    R.id.fragment_container,
-                    EmotionsButonsFragment.newInstance(title, content)
-                ).commit()
+                .replace(R.id.fragment_container, EmotionsButonsFragment.newInstance(title, content))
+                .addToBackStack(null)
+                .commit()
         }
+
         val buttonIds = arrayOf(
             R.id.btnZdumiony,
             R.id.btnPobudzony,
@@ -59,21 +58,24 @@ class HighActivationFragment : Fragment() {
 
         for (id in buttonIds) {
             view.findViewById<Button>(id).setOnClickListener { button ->
-                val buttonText = (button as Button).text
+                val buttonText = (button as Button).text.toString()
 
-                backendService.saveDiary(title, content, buttonText.toString())
-                    parentFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, DiaryViewAll())
-                        .commit()
+                backendService.saveDiary(title, content, buttonText)
+
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, DiaryViewAll())
+                    .addToBackStack(null)
+                    .commit()
             }
         }
+
         return view
     }
 
     companion object {
         @JvmStatic
         fun newInstance(title: String?, content: String?) =
-            PostiveEmotionsFragment().apply {
+            HighActivationFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_TITLE, title)
                     putString(ARG_CONTENT, content)

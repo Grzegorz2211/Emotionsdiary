@@ -6,11 +6,10 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 class DiaryDatabaseHelper(context: Context): SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
-
     companion object {
         private const val DB_NAME = "my_db"
         private const val DB_VERSION = 1
-        private const val TABLE_NAME = "diary"
+        const val TABLE_NAME = "diary"
         private const val COLUMN_ID = "id"
         private const val COLUMN_TITLE = "title"
         private const val COLUMN_CONTENT = "content"
@@ -60,8 +59,8 @@ class DiaryDatabaseHelper(context: Context): SQLiteOpenHelper(context, DB_NAME, 
                 val title = it.getString(it.getColumnIndexOrThrow(COLUMN_TITLE))
                 val content = it.getString(it.getColumnIndexOrThrow(COLUMN_CONTENT))
                 val emotion = it.getString(it.getColumnIndexOrThrow(COLUMN_EMOTION))
-
                 val diary = Diary(id, title, content, emotion)
+
                 diaries.add(diary)
             }
         }

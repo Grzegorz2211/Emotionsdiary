@@ -19,4 +19,12 @@ class DiaryService(context: Context) {
 
         return "Diary saved successfully"
     }
+
+    fun getAllDiaries(): List<Diary> {
+        return dbHelper.getAllDiaries()
+    }
+
+    fun deleteDiary(diaryId: Int) {
+        dbHelper.deleteDiary(diaryId)
+    }
 }

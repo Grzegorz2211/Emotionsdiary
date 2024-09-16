@@ -1,3 +1,5 @@
+package com.example.emotnionsdiary.adapters
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -6,11 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.emotnionsdiary.R
 import com.example.emotnionsdiary.database.Diary
-import com.example.emotnionsdiary.database.DiaryDatabaseHelper
+import com.example.emotnionsdiary.services.DiaryService
 
 class DiaryAdapter(
-    private var diaries: MutableList<Diary>,  // List of diary entries
-    private val diaryDatabaseHelper: DiaryDatabaseHelper  // For handling delete
+    private var diaries: MutableList<Diary>,
+    private val diaryService: DiaryService
 ) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>() {
 
     inner class DiaryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -21,7 +23,6 @@ class DiaryAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiaryViewHolder {
-        // Inflate the diary_item.xml layout for each item
         val view = LayoutInflater.from(parent.context).inflate(R.layout.diary_item, parent, false)
         return DiaryViewHolder(view)
     }
@@ -32,12 +33,9 @@ class DiaryAdapter(
         holder.diaryContent.text = diary.content
         holder.diaryEmotion.text = diary.emotion
 
-        // Set up the delete button click listener
         holder.btnDelete.setOnClickListener {
-            // Remove the diary entry from the database
-            diaryDatabaseHelper.deleteDiary(diary.id)
+            diaryService.deleteDiary(diary.id)
 
-            // Remove the diary entry from the list and notify the adapter
             diaries.removeAt(position)
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, diaries.size)

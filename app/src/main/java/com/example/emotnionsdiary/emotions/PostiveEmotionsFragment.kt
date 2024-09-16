@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
+import com.example.emotnionsdiary.DiaryViewAll
 import com.example.emotnionsdiary.services.DiaryService
 import com.example.emotnionsdiary.R
 
@@ -30,8 +31,8 @@ class PostiveEmotionsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_postive_emotions, container, false)
-        val emotionsButonsFragment: Button = view.findViewById(R.id.btnPowrótPE)
-        emotionsButonsFragment.setOnClickListener {
+        val emotionsButtonsFragment: Button = view.findViewById(R.id.btnPowrótPE)
+        emotionsButtonsFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(
                     R.id.fragment_container,
@@ -61,12 +62,16 @@ class PostiveEmotionsFragment : Fragment() {
             view.findViewById<Button>(id).setOnClickListener { button ->
                 val buttonText = (button as Button).text
                 backendService.saveDiary(title, content, buttonText.toString())
+
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, DiaryViewAll())
+                    .addToBackStack(null)
+                    .commit()
             }
         }
 
         return view
     }
-
 
     companion object {
         @JvmStatic

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
+import com.example.emotnionsdiary.DiaryViewAll
 import com.example.emotnionsdiary.services.DiaryService
 import com.example.emotnionsdiary.R
 
@@ -55,9 +56,11 @@ class NegativeEmotionsFragment : Fragment() {
         for (id in buttonIds) {
             view.findViewById<Button>(id).setOnClickListener { button ->
                 val buttonText = (button as Button).text
-                val resp = backendService.saveDiary(title, content, buttonText.toString())
-
-                Toast.makeText(requireActivity(), "You entereds: $resp", Toast.LENGTH_LONG).show()
+                backendService.saveDiary(title, content, buttonText.toString())
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, DiaryViewAll())
+                    .addToBackStack(null)
+                    .commit()
             }
         }
 
