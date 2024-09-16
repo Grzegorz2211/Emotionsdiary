@@ -9,8 +9,8 @@ class DiaryService(context: Context) {
     private val dbHelper = DiaryDatabaseHelper(context)
 
     fun saveDiary(title: String?, content: String?, emotion: String): String? {
-        if (title.isNullOrBlank() || content.isNullOrBlank() || emotion.isNullOrBlank()) {
-            return "Invalid input"
+        if (title.isNullOrBlank() || content.isNullOrBlank() || emotion.isBlank()) {
+            return "Invalid input provided"
         }
 
         val diary = Diary(title = title, content = content, emotion = emotion)
