@@ -14,7 +14,9 @@ class DiaryAdapter(
 ) : RecyclerView.Adapter<DiaryAdapter.DiaryViewHolder>() {
 
     inner class DiaryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val diaryEntry: TextView = itemView.findViewById(R.id.tvDiaryEntry)
+        val diaryTitle: TextView = itemView.findViewById(R.id.tvDiaryTitle)
+        val diaryContent: TextView = itemView.findViewById(R.id.tvDiaryContent)
+        val diaryEmotion: TextView = itemView.findViewById(R.id.tvDiaryEmotion)
         val btnDelete: Button = itemView.findViewById(R.id.btnDelete)
     }
 
@@ -26,7 +28,9 @@ class DiaryAdapter(
 
     override fun onBindViewHolder(holder: DiaryViewHolder, position: Int) {
         val diary = diaries[position]
-        holder.diaryEntry.text = diary.content  // Assuming 'content' is the diary entry
+        holder.diaryTitle.text = diary.title
+        holder.diaryContent.text = diary.content
+        holder.diaryEmotion.text = diary.emotion
 
         // Set up the delete button click listener
         holder.btnDelete.setOnClickListener {
