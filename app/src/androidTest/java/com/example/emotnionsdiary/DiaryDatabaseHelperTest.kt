@@ -1,3 +1,5 @@
+package com.example.emotnionsdiary
+
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import androidx.test.core.app.ApplicationProvider

@@ -16,7 +16,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="88dp"
         android:layout_marginBottom="47dp"
-        android:text="Dalej" />
+        android:text="@string/dalej" />
 
 
 

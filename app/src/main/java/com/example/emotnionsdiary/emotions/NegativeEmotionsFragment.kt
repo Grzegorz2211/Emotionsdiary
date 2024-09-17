@@ -5,13 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
 import com.example.emotnionsdiary.DiaryViewAll
-import com.example.emotnionsdiary.services.DiaryService
 import com.example.emotnionsdiary.R
+import com.example.emotnionsdiary.services.DiaryService
 
 class NegativeEmotionsFragment : Fragment() {
     private var title: String? = null
@@ -32,7 +31,7 @@ class NegativeEmotionsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_negative_emotions, container, false)
-        val emotionsButonsFragment: Button = view.findViewById(R.id.btnPowrótNE)
+        val emotionsButtonsFragment: Button = view.findViewById(R.id.btnPowrótNE)
 
         val buttonIds = arrayOf(
             R.id.btnZaalarmowany,
@@ -45,11 +44,11 @@ class NegativeEmotionsFragment : Fragment() {
             R.id.btnZaniepokojony,
             R.id.btnPrzekorny
         )
-        emotionsButonsFragment.setOnClickListener {
+        emotionsButtonsFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(
                     R.id.fragment_container,
-                    EmotionsButonsFragment.newInstance(title, content)
+                    EmotionsButtonsFragment.newInstance(title, content)
                 ).commit()
         }
 

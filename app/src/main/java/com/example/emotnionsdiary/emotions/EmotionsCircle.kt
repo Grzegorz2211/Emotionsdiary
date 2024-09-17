@@ -1,11 +1,11 @@
 package com.example.emotnionsdiary.emotions
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
 import com.example.emotnionsdiary.R
@@ -34,7 +34,7 @@ class EmotionsCircle : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val nextButton: Button = view.findViewById(R.id.nav_nextbutton)
-        val emotionsButtonsFragment = EmotionsButonsFragment.newInstance(title, content)
+        val emotionsButtonsFragment = EmotionsButtonsFragment.newInstance(title, content)
 
         nextButton.setOnClickListener {
             parentFragmentManager.beginTransaction()

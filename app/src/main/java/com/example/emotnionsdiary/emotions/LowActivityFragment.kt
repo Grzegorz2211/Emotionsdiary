@@ -5,16 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
 import com.example.emotnionsdiary.DiaryViewAll
-import com.example.emotnionsdiary.services.DiaryService
 import com.example.emotnionsdiary.R
+import com.example.emotnionsdiary.services.DiaryService
 
 class LowActivityFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var title: String? = null
     private var content: String? = null
     private lateinit var backendService: DiaryService
@@ -39,7 +37,7 @@ class LowActivityFragment : Fragment() {
             parentFragmentManager.beginTransaction()
                 .replace(
                     R.id.fragment_container,
-                    EmotionsButonsFragment.newInstance(title, content)
+                    EmotionsButtonsFragment.newInstance(title, content)
                 ).commit()
         }
         return view

@@ -12,7 +12,7 @@ import com.example.emotnionsdiary.DiaryViewAll
 import com.example.emotnionsdiary.services.DiaryService
 import com.example.emotnionsdiary.R
 
-class PostiveEmotionsFragment : Fragment() {
+class PositiveEmotionsFragment : Fragment() {
     private var title: String? = null
     private var content: String? = null
     private lateinit var backendService: DiaryService
@@ -36,7 +36,7 @@ class PostiveEmotionsFragment : Fragment() {
             parentFragmentManager.beginTransaction()
                 .replace(
                     R.id.fragment_container,
-                    EmotionsButonsFragment.newInstance(title, content)
+                    EmotionsButtonsFragment.newInstance(title, content)
                 ).commit()
         }
         val buttonIds = arrayOf(
@@ -76,7 +76,7 @@ class PostiveEmotionsFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance(title: String?, content: String?) =
-            PostiveEmotionsFragment().apply {
+            PositiveEmotionsFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_TITLE, title)
                     putString(ARG_CONTENT, content)

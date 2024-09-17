@@ -1,16 +1,16 @@
 package com.example.emotnionsdiary.emotions
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
 import com.example.emotnionsdiary.R
 
-class EmotionsButonsFragment : Fragment() {
+class EmotionsButtonsFragment : Fragment() {
 
     private var title: String? = null
     private var content: String? = null
@@ -36,7 +36,7 @@ class EmotionsButonsFragment : Fragment() {
         val positiveEmotionsButton: Button = view.findViewById(R.id.nav_PositiveEmotions)
         positiveEmotionsButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, PostiveEmotionsFragment.newInstance(title, content))
+                .replace(R.id.fragment_container, PositiveEmotionsFragment.newInstance(title, content))
                 .addToBackStack(null)
                 .commit()
         }
@@ -69,7 +69,7 @@ class EmotionsButonsFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance(title: String?, content: String?) =
-            EmotionsButonsFragment().apply {
+            EmotionsButtonsFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_TITLE, title)
                     putString(ARG_CONTENT, content)

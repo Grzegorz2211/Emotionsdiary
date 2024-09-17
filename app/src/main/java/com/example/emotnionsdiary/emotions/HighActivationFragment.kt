@@ -8,9 +8,9 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.emotnionsdiary.Constant.ARG_CONTENT
 import com.example.emotnionsdiary.Constant.ARG_TITLE
-import com.example.emotnionsdiary.services.DiaryService
 import com.example.emotnionsdiary.DiaryViewAll
 import com.example.emotnionsdiary.R
+import com.example.emotnionsdiary.services.DiaryService
 
 class HighActivationFragment : Fragment() {
 
@@ -36,7 +36,7 @@ class HighActivationFragment : Fragment() {
         val emotionsButtonFragment: Button = view.findViewById(R.id.PowrótHA)
         emotionsButtonFragment.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, EmotionsButonsFragment.newInstance(title, content))
+                .replace(R.id.fragment_container, EmotionsButtonsFragment.newInstance(title, content))
                 .addToBackStack(null)
                 .commit()
         }
